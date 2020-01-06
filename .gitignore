@@ -1,0 +1,5 @@
+xcuserdata
+/fastlane/report.xml
+/node_modules
+/Pods/SwiftFormat
+.DS_Store

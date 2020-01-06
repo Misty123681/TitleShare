@@ -1,0 +1,6 @@
+
+mutation logPlayback($contentId: ID!, $playbackRegions: [PlaybackRegion!]!) {
+    logPlayback(input: { contentId: $contentId, playbackRegions: $playbackRegions }) {
+        content { id }
+    }
+}

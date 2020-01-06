@@ -1,0 +1,3 @@
+NAME: HockeyApp
+HOMEPAGE: http://hockeyapp.net/pricing/
+LICENSE: Subscription

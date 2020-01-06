@@ -1,0 +1,23 @@
+query contentItemAudioSections($contentItemId: ID!, $pageSize: Int!, $oneBasedPageNumber: Int!) {
+    node(id: $contentItemId) {
+        id
+        ... on Content {
+            totalBytes(format: MP3_HIGH_QUALITY) {
+                total
+            }
+            audioSectionsHash
+            audioSections(pageSize: $pageSize, pageNumber: $oneBasedPageNumber) {
+                items {
+                    title
+                    narrationUri(format: MP3_HIGH_QUALITY) {
+                        uri
+                    }
+                    soundtrackUri(format: MP3_HIGH_QUALITY) {
+                        uri
+                    }
+                }
+                totalCount
+            }
+        }
+    }
+}

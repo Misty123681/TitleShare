@@ -1,0 +1,7 @@
+mutation joinCode($code: String!) {
+    joinCode(input: { code: $code }) {
+        ...on ContentCollection {
+            name
+        }
+    }
+}

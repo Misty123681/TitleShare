@@ -1,0 +1,43 @@
+query contentItems($pageSize: Int!, $oneBasedPageNumber: Int!, $coverImageSizes: [ImageSizeInput!]!) {
+    searchContent(pageSize: $pageSize, pageNumber: $oneBasedPageNumber) {
+        items {
+            id
+            organisation {
+                name
+            }
+            type
+            title
+            subtitle
+            description
+            author
+            narrator
+            publisher
+            releaseDate
+            totalDuration
+            hasSoundtrack
+            coverImageUris(sizes: $coverImageSizes)
+            language {
+                name
+            }
+            genre {
+                name
+            }
+            secondGenre {
+                name
+            }
+            audioSectionsHash
+        }
+        totalCount
+    }
+}
+
+query myBookmark($contentId: ID!) {
+    node(id: $contentId) {
+        ...on Content {
+            myBookmark {
+                audioSectionIndex
+                time
+            }
+        }
+    }
+}

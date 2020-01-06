@@ -1,0 +1,12 @@
+# see: https://docs.fastlane.tools/advanced/#appfile
+
+apple_id("tech+appleid@booktrack.com")
+app_identifier("com.booktrack.titleshare.debug")
+
+for_lane :ci_build_beta do
+  app_identifier "com.booktrack.titleshare.beta"
+end
+
+for_lane :ci_build_stable do
+  app_identifier "com.booktrack.titleshare"
+end

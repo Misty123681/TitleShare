@@ -1,0 +1,8 @@
+git_url("git@github.com:booktrack/match-certificates.git")
+
+type("development")
+
+# We only want provisioning profiles as follows
+# com.booktrack.titleshare.debug - development
+# com.booktrack.titleshare.beta - adhoc
+# com.booktrack.titleshare - appstore

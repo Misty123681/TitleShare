@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>provisioningProfiles</key>
+    <dict>
+        <key>com.booktrack.titleshare</key>
+        <string>Appstore</string>
+        <key>com.booktrack.titleshare.beta</key>
+        <string>AdHoc</string>
+    </dict>
+    <key>method</key>
+    <string>app-store</string>
+    <key>teamID</key>
+    <string>J3SA7T2WSE</string>
+    <key>Scheme</key>
+    <string>titleshare</string>
+    <key>configuration</key>
+    <string>Release</string>
+</dict>
+</plist>

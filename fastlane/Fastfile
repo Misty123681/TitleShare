@@ -1,0 +1,46 @@
+# see: https://docs.fastlane.tools/actions
+
+opt_out_usage
+default_platform(:ios)
+
+platform :ios do
+  before_all do
+    setup_circle_ci
+  end
+
+  desc "Builds an adhoc beta and uploads it to hockeyapp"
+  lane :ci_build_beta do
+    sync_code_signing(type: "adhoc", readonly: true)
+    build_ios_app(configuration: "AdHoc", scheme: "titleshare", export_method: "ad-hoc")
+    appcenter_upload(
+      api_token: ENV["APP_CENTER_API_TOKEN"],
+      owner_name: "tech-1-cf7a",
+      app_name: "titleSharev",
+      ipa: "titleShare-β.ipa",
+      dsym: "titleShare-β.app.dSYM.zip",
+      release_notes: last_git_commit[:message],
+      group: "BetaTesters",
+      notify_testers: true
+    )
+  end
+
+  desc "Builds an appstore release"
+  lane :ci_build_stable do
+    sync_code_signing(type: "appstore", readonly: true)
+    build_ios_app(configuration: "Release", scheme: "titleshare", export_method: "app-store")
+  end
+
+  desc "Bumps the build number"
+  lane :bump_build_number do
+    increment_build_number
+  end
+
+  desc "Sets the version number"
+  lane :set_version_number do |options|
+    UI.message "Current version number: " + get_version_number
+    if !options[:version_number]
+      UI.user_error!("Missing version_number:\"x.y.z\" parameter!")
+    end
+    increment_version_number(version_number: options[:version_number])
+  end
+end

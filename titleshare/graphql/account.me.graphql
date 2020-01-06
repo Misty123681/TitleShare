@@ -1,0 +1,26 @@
+fragment UserDetails on User {
+    id
+    firstName
+    lastName
+    email
+    roles {
+        type
+        organisation {
+            id
+        }
+    }
+}
+
+
+query me {
+    me {
+        ...UserDetails
+    }
+}
+
+
+mutation updateMe($firstName: ValidatedString, $lastName: ValidatedString) {
+    updateMe(input: { firstName: $firstName, lastName: $lastName }) {
+        ...UserDetails
+    }
+}

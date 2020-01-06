@@ -1,0 +1,96 @@
+PODS:
+  - Alamofire (4.8.2)
+  - Apollo (0.10.0):
+    - Apollo/Core (= 0.10.0)
+  - Apollo/Core (0.10.0)
+  - AppCenter/Analytics (1.14.0):
+    - AppCenter/Core
+  - AppCenter/Core (1.14.0)
+  - AppCenter/Crashes (1.14.0):
+    - AppCenter/Core
+  - AppCenter/Distribute (1.14.0):
+    - AppCenter/Core
+  - CircleProgressBar (0.32)
+  - MaterialComponents/AnimationTiming (81.0.0)
+  - MaterialComponents/Buttons (81.0.0):
+    - MaterialComponents/Ink
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowElevations
+    - MaterialComponents/ShadowLayer
+    - MaterialComponents/Shapes
+    - MaterialComponents/Typography
+    - MDFInternationalization
+    - MDFTextAccessibility
+  - MaterialComponents/Ink (81.0.0):
+    - MaterialComponents/private/Math
+  - MaterialComponents/OverlayWindow (81.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Application (81.0.0)
+  - MaterialComponents/private/KeyboardWatcher (81.0.0):
+    - MaterialComponents/private/Application
+  - MaterialComponents/private/Math (81.0.0)
+  - MaterialComponents/private/Overlay (81.0.0)
+  - MaterialComponents/ShadowElevations (81.0.0)
+  - MaterialComponents/ShadowLayer (81.0.0):
+    - MaterialComponents/ShadowElevations
+  - MaterialComponents/Shapes (81.0.0):
+    - MaterialComponents/private/Math
+    - MaterialComponents/ShadowLayer
+  - MaterialComponents/Snackbar (81.0.0):
+    - MaterialComponents/AnimationTiming
+    - MaterialComponents/Buttons
+    - MaterialComponents/OverlayWindow
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/KeyboardWatcher
+    - MaterialComponents/private/Overlay
+    - MaterialComponents/Typography
+  - MaterialComponents/Typography (81.0.0):
+    - MaterialComponents/private/Application
+    - MaterialComponents/private/Math
+  - MDFInternationalization (2.0.0)
+  - MDFTextAccessibility (2.0.0)
+  - SwiftFormat/CLI (0.37.2)
+  - Swinject (2.6.0)
+  - SwinjectStoryboard (2.2.0):
+    - Swinject (~> 2.6)
+
+DEPENDENCIES:
+  - Alamofire
+  - Apollo
+  - AppCenter/Analytics
+  - AppCenter/Crashes
+  - AppCenter/Distribute
+  - CircleProgressBar
+  - MaterialComponents/Snackbar
+  - SwiftFormat/CLI
+  - Swinject
+  - SwinjectStoryboard
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - Apollo
+    - AppCenter
+    - CircleProgressBar
+    - MaterialComponents
+    - MDFInternationalization
+    - MDFTextAccessibility
+    - SwiftFormat
+    - Swinject
+    - SwinjectStoryboard
+
+SPEC CHECKSUMS:
+  Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
+  Apollo: aa9b870203900b9526332ea3d12c37b4dc6ce1b9
+  AppCenter: 02c5efe08d3bbab5421ae41d5f7aa7238906b817
+  CircleProgressBar: 3920079be5224b62b3d9ed6eeb23ac01c835b681
+  MaterialComponents: 9ef60e1abd89463ac018ca6d354be41fd5df059a
+  MDFInternationalization: 010097556d6b09d2c4ea38e0820ea6d37be6a314
+  MDFTextAccessibility: 85c09a1bd9c321f494348e632a25063bcda35a53
+  SwiftFormat: abbfb26dde4c6d683923cde153c88e10da9d7881
+  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+  SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
+
+PODFILE CHECKSUM: 2b2d42ebf1c19e42f9234edecdfee95bfe0e8d99
+
+COCOAPODS: 1.5.3

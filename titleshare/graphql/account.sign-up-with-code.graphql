@@ -1,0 +1,10 @@
+mutation signUpWithCode($email: ValidatedString!, $code: ValidatedString!) {
+    signUpWithCode(input: { email: $email, code: $code, useCookie: false }) {
+        ...on SignUpWithCodeLoggedInResponse {
+            token
+        }
+        ...on SignUpWithCodeActionRequiredResponse {
+            actionRequired
+        }
+    }
+}

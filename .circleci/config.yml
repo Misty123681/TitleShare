@@ -1,0 +1,52 @@
+version: 2
+jobs:
+  build-beta:
+    macos:
+      xcode: "10.2.0"
+    steps:
+      - checkout
+      - run:
+          name: Setup
+          command: bundle install
+      - run:
+          name: Build
+          command: bundle exec fastlane ios ci_build_beta
+  build-stable:
+    macos:
+      xcode: "10.2.0"
+    steps:
+      - checkout
+      - run:
+          name: Setup
+          command: bundle install
+      - run:
+          name: Build
+          command: bundle exec fastlane ios ci_build_stable
+      - run:
+          name: Copy Artifacts
+          command: |
+            VERSION_NAME=$(agvtool what-marketing-version -terse1)
+            VERSION_CODE=$(agvtool what-version -terse || awk '{printf "%05d\n", $0}')
+            IDENTIFIER="com.booktrack.titleshare_${VERSION_NAME}_${VERSION_CODE}"
+            mkdir artifacts
+            cp titleShare.ipa artifacts/${IDENTIFIER}.ipa
+            cp titleShare.app.dSYM.zip artifacts/${IDENTIFIER}.app.dSYM.zip
+            echo "Done, now do"
+            echo "git tag ${IDENTIFIER} ${CIRCLE_SHA1} && git push origin tag ${IDENTIFIER}"
+      - store_artifacts:
+          path: artifacts
+
+workflows:
+  version: 2
+  build-beta:
+    jobs:
+      - build-beta:
+          filters:
+            branches:
+              only: beta
+  build-stable:
+    jobs:
+      - build-stable:
+          filters:
+            branches:
+              only: stable

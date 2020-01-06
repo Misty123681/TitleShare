@@ -1,0 +1,10 @@
+{
+ "scripts": {
+   "fetch-schema": "apollo schema:download --endpoint=http://localhost:3000/graphql titleshare/graphql/schema.json",
+   "generate-graphql-types": "apollo codegen:generate --passthroughCustomScalars --includes=titleshare/**/*.graphql --localSchemaFile=titleshare/graphql/schema.json --target=swift titleshare/graphql/API.swift",
+   "format-code": "Pods/SwiftFormat/CommandLineTool/swiftformat ."
+ },
+  "devDependencies": {
+    "apollo": "2.1.8"
+  }
+}
